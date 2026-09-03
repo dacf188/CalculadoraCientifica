@@ -198,6 +198,27 @@ class Tangente extends Operacion {
     public void imprimir() {
         System.out.println("INGRESO A LA OPCION TANGENTE");
         super.imprimir();
-        System.out.println("El resultado de la segunda operacio es: " + resultado2);
+        System.out.println("El resultado de la segunda operacion es: " + resultado2);
+    }
+}
+class TrinomioCuadradoPerfecto extends Operacion{
+    @Override
+    public void ingresar (){
+        super.ingresar();
+    }
+    @Override
+    public void operar (){
+        //RESULTADO DE LA EXPANSIÓN
+        resultado = Math.pow(num1, 2) + (2 * num1 * num2) + Math.pow(num2, 2);
+        //OTRA MANERA DE HACERLO
+        //resultado2 = Math.pow(num1 + num2, 2);
+    }
+    @Override
+    public void imprimir (){
+        //SE EVALUA NUMÉRICAMENTE
+        //SE BASÓ USANDO (A + B)2 = A2 + 2AB + B2
+        //NUM 1 ES A Y NUM2 ES B
+        System.out.println("INGRESO A LA OPCION TRINOMIO CUADRADO PERFECTO");
+        super.imprimir();
     }
 }

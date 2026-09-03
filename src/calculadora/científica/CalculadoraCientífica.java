@@ -6,7 +6,6 @@ public class CalculadoraCientífica {
 
     public static void main(String[] args) {
         int opcion = 0;
-        double num1, num2;
         //MENÚ DE ELECCIÓN DE USUARIO
         Scanner scanner = new Scanner(System.in);
         Operacion operar = null;
@@ -21,7 +20,8 @@ public class CalculadoraCientífica {
             System.out.println("7. Seno");
             System.out.println("8. Coseno");
             System.out.println("9. Tangente");
-            System.out.println("10. Salir");
+            System.out.println("10. Trinomio Cuadrado Perfecto");
+            System.out.println("11. Salir");
 
             opcion = scanner.nextInt();
             operar = null;
@@ -36,7 +36,8 @@ public class CalculadoraCientífica {
                 case 7 -> operar = new Seno();
                 case 8 -> operar = new Coseno();
                 case 9 -> operar = new Tangente();
-                case 10-> {
+                case 10 -> operar = new TrinomioCuadradoPerfecto();
+                case 11-> {
                     System.out.println("Saliendo del programa");
                     break;
                 }
@@ -48,7 +49,7 @@ public class CalculadoraCientífica {
                 operar.operar();
                 operar.imprimir();
             }
-        } while (opcion != 10);
+        } while (opcion != 11);
     }
     
 }
