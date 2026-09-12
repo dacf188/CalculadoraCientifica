@@ -23,31 +23,48 @@ public class CalculadoraCientífica {
             System.out.println("10. Trinomio Cuadrado Perfecto");
             System.out.println("11. Salir");
 
-            opcion = scanner.nextInt();
-            operar = null;
-
-            switch (opcion) {
-                case 1 -> operar = new Suma();
-                case 2 -> operar = new Resta();
-                case 3 -> operar = new Multipliacion();
-                case 4 -> operar = new Division();
-                case 5 -> operar = new Potencia();
-                case 6 -> operar = new Raiz();
-                case 7 -> operar = new Seno();
-                case 8 -> operar = new Coseno();
-                case 9 -> operar = new Tangente();
-                case 10 -> operar = new TrinomioCuadradoPerfecto();
-                case 11-> {
-                    System.out.println("Saliendo del programa");
-                    break;
+            try {
+                opcion = scanner.nextInt();
+                operar = null;
+                
+                switch (opcion) {
+                    case 1 ->
+                        operar = new Suma();
+                    case 2 ->
+                        operar = new Resta();
+                    case 3 ->
+                        operar = new Multiplicacion();
+                    case 4 ->
+                        operar = new Division();
+                    case 5 ->
+                        operar = new Potencia();
+                    case 6 ->
+                        operar = new Raiz();
+                    case 7 ->
+                        operar = new Seno();
+                    case 8 ->
+                        operar = new Coseno();
+                    case 9 ->
+                        operar = new Tangente();
+                    case 10 ->
+                        operar = new TrinomioCuadradoPerfecto();
+                    case 11 -> {
+                        System.out.println("Saliendo del programa");
+                        break;
+                    }
+                    default ->
+                        System.out.println("ERROR (SELECCIONE UNA OPCION CORRECTA)");
                 }
-                default ->
-                    System.out.println("ERROR (SELECCIONE UNA OPCION CORRECTA)");
-            }
-            if (operar != null) {
-                operar.ingresar();
-                operar.operar();
-                operar.imprimir();
+                if (operar != null) {
+                    if (operar.ingresar()) {
+                        operar.operar();
+                        operar.imprimir();
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("INGRESO UN TIPO DE DATO INVALIDO");
+                scanner.nextLine();
+                opcion = 0;
             }
         } while (opcion != 11);
     }
