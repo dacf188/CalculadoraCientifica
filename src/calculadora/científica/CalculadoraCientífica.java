@@ -1,5 +1,6 @@
 package calculadora.científica;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculadoraCientífica {
@@ -61,7 +62,7 @@ public class CalculadoraCientífica {
                         operar.imprimir();
                     }
                 }
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
                 System.out.println("INGRESO UN TIPO DE DATO INVALIDO");
                 scanner.nextLine();
                 opcion = 0;

@@ -1,5 +1,6 @@
 package calculadora.científica;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 abstract class Operacion {
@@ -40,7 +41,7 @@ abstract class Operacion {
             System.out.println("Ingrese el segundo dato");
             num2 = scanner.nextDouble();
             return true;
-        } catch (Exception e) {
+        } catch (InputMismatchException e) {
             System.out.println("TIPO DE DATO INCORRECTO");
             scanner.nextLine();
             return false;
